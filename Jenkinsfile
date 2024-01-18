@@ -10,7 +10,15 @@ pipeline {
     }
 
     stages {
-      
+        
+      stage('Checkout') {
+            steps {
+                script {
+                    // Clone the React app from GitHub
+                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: REPO_URL]]])
+                }
+            }
+        }
 
         stage('SonarQube Analysis') {
             steps {
