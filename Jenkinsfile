@@ -5,7 +5,7 @@ pipeline {
         REPO_URL = 'https://github.com/Ameurgarraoui/MERN-Frontend.git'
         DOCKERHUB_USERNAME = credentials('dockerhub_cred')
         DOCKERHUB_PASSWORD = credentials('dockerhub_cred')
-        SONARQUBE_TOKEN = credentials('e873c592-cfef-4f3b-b1e0-8faddfd71e1f')
+        SONARQUBE_TOKEN = credentials('SonarQube')
         SONARQUBE_URL = 'http://localhost:9000'  // Adjust based on your SonarQube server URL
     }
 
