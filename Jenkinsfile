@@ -63,12 +63,5 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            // Additional steps after a successful build
-        }
-        failure {
-            // Additional steps after a failed build
-        }
-    }
+   
 }
