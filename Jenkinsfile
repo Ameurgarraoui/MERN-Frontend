@@ -23,8 +23,7 @@ pipeline {
         stage('SonarQube Analysis') {
     steps {
         script {
-            sh 'echo "hello"'
-            sh"echo ${DOCKERHUB_USERNAME} is ur user"
+            sh'pwd'
             withSonarQubeEnv('SonarQube') {
                 sh 'npm install'
                 sh "npm run sonar -X -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}"
