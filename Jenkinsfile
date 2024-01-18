@@ -23,14 +23,18 @@ pipeline {
         stage('SonarQube Analysis') {
     steps {
         script {
-            sh'pwd'
-            withSonarQubeEnv('SonarQube') {
-                sh 'npm install'
-                sh "npm run sonar -X -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}"
+            // Change to the project directory
+            dir('client') {
+                withSonarQubeEnv('SonarQube') {
+                    // Install dependencies and run SonarQube analysis
+                    sh 'npm install'
+                    sh "npm run sonar -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}"
+                }
             }
         }
     }
 }
+
 
 
         stage('Build React App') {
