@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        REPO_URL = 'https://github.com/your-username/your-react-app.git'
+        REPO_URL = 'https://github.com/Ameurgarraoui/MERN-Frontend.git'
         DOCKERHUB_USERNAME = credentials('dockerhub_cred')
         DOCKERHUB_PASSWORD = credentials('dockerhub_cred')
         SONARQUBE_TOKEN = credentials('e873c592-cfef-4f3b-b1e0-8faddfd71e1f')
@@ -10,14 +10,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    // Clone the React app from GitHub
-                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: REPO_URL]]])
-                }
-            }
-        }
+      
 
         stage('SonarQube Analysis') {
             steps {
