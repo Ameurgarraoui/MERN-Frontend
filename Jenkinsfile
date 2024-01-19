@@ -39,10 +39,12 @@ pipeline {
 
         stage('Build React App') {
             steps {
+                dir('client') {
                 script {
                     sh 'npm install'
                     sh 'npm run build'
-                }
+                    }
+                 }
             }
         }
 
