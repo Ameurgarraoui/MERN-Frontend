@@ -1,7 +1,7 @@
 FROM node:18-alpine
 
 # Set the working directory to the root of your project
-WORKDIR /usr/app
+WORKDIR /usr/app/client
 COPY ./ /usr/app
 RUN npm install
 
