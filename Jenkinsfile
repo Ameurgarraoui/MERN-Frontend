@@ -52,7 +52,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image and tag it
-                    sh "docker build -t ${DOCKERHUB_USERNAME}/mern-app:${env.BUILD_ID} ."
+                    sh "docker build -t ameurx1/mern-app:${env.BUILD_ID} ."
                 }
             }
         }
