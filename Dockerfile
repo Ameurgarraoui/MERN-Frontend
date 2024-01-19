@@ -1,11 +1,8 @@
 FROM node:18-alpine
 
 # Set the working directory to the root of your project
-WORKDIR /
-
-# Copy the current directory contents into the container at /
-COPY . /
-
+WORKDIR /usr/app
+COPY ./ /usr/app
 RUN npm install
 
 # Expose the port the application runs on
